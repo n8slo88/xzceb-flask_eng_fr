@@ -3,17 +3,16 @@
     <script src="./static/mywebscript.js"></script>
     <div class="card">
     <div class="card-body">
-        <div class="mb-3">
-            <label class="form-label">Text to be translated</label>
-            <input type="textarea" class="form-control" id="textToTranslate">
-        </div>
-    
-        <div style="padding: 25px 25px 25px 25px;">
-            <button onclick="translateToFrench()" class="btn btn-secondary">Translate to French</button>        
-            <button onclick="translateToEnglish()" class="btn btn-secondary">Translate to English</button>        
-        </div>
-    
-        <div id="translated_text" style="padding: 25px 25px 25px 25px;"></div>
+        <form action="/englishToFrench" method="post">
+                <div class="mb-3">
+                    <label class="form-label">Text to be translated</label>
+                    <input type="textarea" class="form-control" name="textToTranslate">
+                </div>
+                <div style="padding: 25px 25px 25px 25px;">
+                    <button type="submit" class="btn btn-secondary">Translate to French</button>        
+                </div>
+         </form>
+        <div id="translated_text" style="padding: 25px 25px 25px 25px;">{{result}}</div>
         </div>
   </div>
 </html>
